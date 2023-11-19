@@ -17,10 +17,10 @@ To execute using the included log file
 ```shell
 mvn spring-boot:run
 ```
-Manual shutdown (Ctrl+C) is required atm to shut this down.
+Manual shutdown (Ctrl+C) is required atm to turn this off.
 
 ## Result
-Results will appear in the present working directory with filename `result-*,txt`
+Results will appear in the present working directory with filename `result-*.txt`
 
 
 To execute with own log file (utf-8), execute the following
