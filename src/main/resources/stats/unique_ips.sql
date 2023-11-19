@@ -1,0 +1,2 @@
+SELECT COUNT(DISTINCT ip) as cnt
+FROM logs;
