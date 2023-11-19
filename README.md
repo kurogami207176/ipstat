@@ -29,5 +29,6 @@ mvn spring-boot:run -Dlog.source=<logfile location>
 ```
 
 ## Technical Considerations
-1. SQL was used to generate stats since it's more extensible as opposed to manually coding them in java.
-
+1. This runs as an application runner due to time constraint (first thing came to mind). This is causing doubling up of data in the tests. Cleanup pre test run could be done but would risk interfering with the running process and could generate unpredictable results. This could potentially be a command line runner.
+2. SQL was used to generate stats since it's more extensible as opposed to manually coding them in java.
+3. Stats with top 3 attributes are sorted secondarily on alphabetical order due to lack of time. Ideally, we would want to sort this by recency.

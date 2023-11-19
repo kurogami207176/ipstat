@@ -17,7 +17,7 @@ class PersistAndStatServiceTest {
     @Autowired
     private PersistAndStatService persistAndStatService;
 
-    private String logSource = "logs.log";
+    private String logSource = "test.log";
 
     @Test
     void testUniqueIpsWithInternalLog() {
@@ -29,7 +29,7 @@ class PersistAndStatServiceTest {
         assertThat(resultList).hasSize(1);
         Map<String, String> resultItem = resultList.get(0);
         assertThat(resultItem.get("CNT"))
-                .isEqualTo("7");
+                .isEqualTo("11");
     }
     @Test
     void testTop3IpWithInternalLog() {
@@ -44,9 +44,9 @@ class PersistAndStatServiceTest {
                 .map(item -> item.get("IP"))
                 .toList();
         assertThat(urlList).contains(
-                "208.67.222.222",
-                "193.45.67.89",
-                "193.45.67.89"
+                "168.41.191.40",
+                "177.71.128.21",
+                "50.112.00.11"
         );
     }
     @Test
@@ -62,9 +62,9 @@ class PersistAndStatServiceTest {
                 .map(item -> item.get("URL"))
                 .toList();
         assertThat(urlList).contains(
-                "/api/status-check/",
-                "/home-page/",
-                "/api/data-update/"
+                "/docs/manage-websites/",
+                "/",
+                "/asset.css"
         );
     }
 }
